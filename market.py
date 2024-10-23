@@ -117,10 +117,22 @@ def buy_products() -> None:
             sleep(2)
             menu()
     else:
-        print('Não existem produtos para vender.')
+        print('Ainda não existem produtos para vender.')
 
 def view_cart() -> None:
-    pass
+    if len(cart) > 0:
+        print('Produtos no carrinho: ')
+
+        for item in cart:
+            for data in item.items():
+                print(data[0])
+                print(f'Quantidade: {data[1]}')
+                print('----------------------')
+                sleep(1)
+    else:
+        print('Ainda não existem produtos no carrinho')
+    sleep(2)
+    menu()
 
 def close_order() -> None:
     if len(cart) > 0:
