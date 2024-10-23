@@ -22,4 +22,4 @@ class Product:
         return self.__price
 
     def __str__(self) -> str:
-        return f'Código{self.code} \nNome: {self.name} \nPreço: {format_float_str_coin(self.price)}'
+        return f'Código {self.code} \nNome: {self.name} \nPreço: {format_float_str_coin(self.price)}'

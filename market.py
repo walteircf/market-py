@@ -26,7 +26,8 @@ def menu() -> None:
     print('5 - Fechar pedido')
     print('6 - Sair do sistema')
 
-    option: int = int(input())
+    print('===============================')
+    option: int = int(input('Opção: '))
 
     if option == 1:
         register_product()
@@ -53,7 +54,7 @@ def register_product() -> None:
     print('-------------------')
 
     name: str = input('Informe o nome do produto: ')
-    price: float = float('Informe o preço do produto: ')
+    price: float = float(input('Informe o preço do produto: '))
 
     product: Product = Product(name, price)
     products.append(product)
@@ -84,7 +85,7 @@ def buy_products() -> None:
             print(product)
             print('----------------------------------------------------------')
             sleep(1)
-        code: int = int(input())
+        code: int = int(input('Código do produto: '))
 
         product: Product = get_product_by_code(code)
 
@@ -118,6 +119,8 @@ def buy_products() -> None:
             menu()
     else:
         print('Ainda não existem produtos para vender.')
+    sleep(2)
+    menu()
 
 def view_cart() -> None:
     if len(cart) > 0:
